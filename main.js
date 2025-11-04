@@ -24,6 +24,8 @@ const perguntas = [
                 "Você é uma pessoa sociável que gosta da energia dos outros. Adora criar conexões e se sente vivo em meio a interações e risadas.",
                 "Você tem facilidade em se comunicar e se torna o centro das atenções naturalmente em grupos.",
                 "A troca de experiências e o convívio social são essenciais para o seu bem-estar e felicidade.",
+                ]
+                
             }
         ]
     },
