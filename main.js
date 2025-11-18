@@ -6,7 +6,7 @@ const caixaPerguntas = document.querySelector(".caixa-perguntas");
 const caixaAlternativas = document.querySelector(".caixa-alternativas");
 const caixaResultado = document.querySelector(".caixa-resultado");
 const textoResultado = document.querySelector(".texto-resultado");
-
+const botaoJogarNovamnete = document.querySelector(".novamente-btn");
 
 
 
@@ -47,8 +47,13 @@ function mostraResultado(){
     caixaPerguntas.textContent = "Se fosse possível traduzir sua forma de aprender em palavras, diríamos que...";
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = " ";
+    botaoJogarNovamnete.addEventListener("click", jogaNovamente);
 }
 
-
+function jogaNovamente(){
+    atual = 0;
+    historiaFinal = " ";
+    mostraPergunta();
+}
 
 mostraPergunta();
