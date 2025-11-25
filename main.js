@@ -1,4 +1,4 @@
-import { aleatorio } from "./aleatorio.js";
+import { aleatorio, nome } from "./aleatorio.js";
 import { perguntas } from "./perguntas.js";
 
 const caixaPrincipal = document.querySelector(".caixa-principal");
@@ -44,7 +44,7 @@ function respostaSelecionada(opcaoSelecionada){
 }
 
 function mostraResultado(){
-    caixaPerguntas.textContent = "Se fosse possível traduzir sua forma de aprender em palavras, diríamos que...";
+    caixaPerguntas.textContent = `Se fosse possível traduzir sua personalidade em palavras, diríamos que ${nome}...`;
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = " ";
     caixaResultado.classList.add("mostrar");
@@ -55,7 +55,15 @@ function jogaNovamente(){
     atual = 0;
     historiaFinal = " ";
     caixaResultado.classList.remove("mostrar");
+    substituiNome();
     mostraPergunta();
 }
 
+function substituiNome(){
+    for (const pergunta of perguntas){
+        pergunta.enunciado = pergunta.enunciado.replace(/você/g, nome);
+    }
+}
+
+substituiNome();
 mostraPergunta();
